@@ -1,1 +1,3 @@
-
+# TASK
+Files example1_labeled.pdf and example2_labeled.pdf illustrates the problem. Algorithm (at the limit of perfection) should be able to take an image and provide
+defect type which can take discrete values of 4/4, 3/4, 2/4, 1/4 (first entry in labels) or -1 if the shape is not clear (these defects are marked in orange rectangles). The second entry (perhaps unnecessary/completely redundant) specifies if the defect is present (1), or it is unclear (0). Coordinates of the defect have to be returned as a combination of its center (x,y), and its with and height (w,h). Red rectangles illustrate noise which should be ignored. Note that not all the defects are labeled, should be enough to grasp the concept.
