@@ -11,7 +11,7 @@ def rotate_2D(x,y,angle=np.pi/4):
     rot = np.dot(R,xy)
     return rot[0],rot[1]
 
-class defect:
+class contour:
     # constructor
     def __init__(self,thickness=0.2,resolution=100,r=1):
         self.fraction = 1
