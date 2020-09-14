@@ -1,5 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.stats import truncnorm
+
+def get_truncated_normal(mean=0, sd=1, low=0, upp=10):
+    return truncnorm(
+        (low - mean) / sd, (upp - mean) / sd, loc=mean, scale=sd).rvs()
 
 def gaussian(x, mu, sig):
     return np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.)))
@@ -11,7 +16,7 @@ def rotate_2D(x,y,angle=np.pi/4):
     rot = np.dot(R,xy)
     return rot[0],rot[1]
 
-class contour:
+class defect:
     # constructor
     def __init__(self,thickness=0.2,resolution=100,r=1):
         self.fraction = 1
@@ -58,3 +63,44 @@ class contour:
         split = np.where( np.arctan2(self.y1,self.x1)+np.pi < angle )
         self.x1, self.y1 = self.x1[split], self.y1[split]
         self.x2, self.y2 = self.x2[split], self.y2[split]
+     
+    # need some work
+    def fill(self,cutoff=0.2):
+        right_bound = [ print(i,np.abs(self.x1[i]-self.x1[i-1]), np.abs(self.x1[i-1]-self.x1[i-2])) for i,x in enumerate(self.x1) if np.abs(self.x1[i]                 -self.x1[i-1]) > cutoff * np.abs(self.x1[i-1]-self.x1[i-2]) ]
+        right_bound = [ i for i,x in enumerate(self.x1) if np.abs(self.x1[i]-self.x1[i-1]) > 0.1 + np.abs(self.x1[i-1]-self.x1[i-2]) ]
+        print(right_bound)
+        left_bound = int(right_bound[0]-1)
+        plt.plot(self.x1,self.y1)
+        plt.plot(self.x2,self.y2)
+        pair = ([self.x1[right_bound],self.x2[right_bound]],[self.y1[right_bound],self.y2[right_bound]])
+        plt.plot(pair[0],pair[1])
+        pair = ([self.x1[left_bound],self.x2[left_bound]],[self.y1[left_bound],self.y2[left_bound]])
+        plt.plot(pair[0],pair[1])
+    
+    # not too usefull
+    def get_csv(self,path='contour.csv'):
+        self.x = np.concatenate((self.x1,self.x2))
+        self.y = np.concatenate((self.y1,self.y2))
+        d = {'x': self.x, 'y': self.y}
+        df = pd.DataFrame(data=d)
+        df.to_csv(path, index=False,sep=" ")
+        #print(len(self.x))
+        #print(df)
+        
+        
+  # Geting random shape
+d = defect()
+for i in range(10):
+    sigma = get_truncated_normal(mean=3, sd=1, low=0.01, upp=1000)
+    print(sigma)
+    lumpyness = get_truncated_normal(mean=-1, sd=1, low=-1, upp=5)
+    angle = np.random.normal(np.pi/4,4)
+    d.add_bump(sigma=sigma,lumpyness=lumpyness)
+    d.rotate(angle=angle)
+    d.plot()
+d.plot()
+d.cut(1/4)
+d.plot()
+
+
+d.fill()
