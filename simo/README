@@ -5,15 +5,20 @@ train setas - sulabelinta 10 nuotrauku mano pavargusiomis rankomis
 val setas - sulabelinta 1 nuotrauka mano pavargusiomis rankomis
 test - kazkokia random foto kuri man patiko
 
-important notes: kuriant record failus nenaudoti tif nuotrauku nes nepalaiko, nauodti jpg
+important notes: 
+-kuriant record failus nenaudoti tif nuotrauku nes nepalaiko, naudoti jpg
+-runnint ant GPU, o ne ant CPU :DDDDD
 
 results
 - training loss - 1.5
 - evaluation total-loss - 3.5
+- imesciau tensorboarda, bet kazko neberanda man tu tf.events file ir tingiu troubleshootint ir 6 ryto siaip dabar, bet trumpai per 100->5000 steps training loss 7->1.5. 
 
 test
--prastokai labai (foto ikelta)
+-prastokai labai (foto ikelta). "mygraph.png" confidence >30%, tai tik kelias poras atpazista , bet ir tai ne taip suklasifikuoja. "mygraph3.png" numazinus confidence cut-offa 
+iki >10%, tai jau beveik visas poras atpazista, bet klasifikacija galima pamirst vapse.
 
 conclusions
 -reikia normalaus kiekio + normaliai preprocessintu foto ir pasidometi koki pre-traininta modeli geriausia butu naudoti
+-siaip tai viskas veikia
 '''
