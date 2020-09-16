@@ -1,0 +1,19 @@
+'''
+Pagal tutoriala - https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
+modelis - SSD ResNet50 V1 FPN 640x640
+train setas - sulabelinta 10 nuotrauku mano pavargusiomis rankomis
+val setas - sulabelinta 1 nuotrauka mano pavargusiomis rankomis
+test - kazkokia random foto kuri man patiko
+
+important notes: kuriant record failus nenaudoti tif nuotrauku nes nepalaiko, nauodti jpg
+
+results
+- training loss - 1.5
+- evaluation total-loss - 3.5
+
+test
+-prastokai labai (foto ikelta)
+
+conclusions
+-reikia normalaus kiekio + normaliai preprocessintu foto ir pasidometi koki pre-traininta modeli geriausia butu naudoti
+'''
