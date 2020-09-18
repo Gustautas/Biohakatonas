@@ -244,15 +244,18 @@ class label_generator(defect):
         rgb=cmap(self.defect_color)
         return rgb
     def get_coordinates(self):
-        x=np.random.random_sample(self.Nr)*self.scale
-        y=np.random.random_sample(self.Nr)*self.scale
+        x=(0.04*self.scale+np.random.random_sample(self.Nr)*self.scale)*0.9
+        y=(0.04*self.scale+np.random.random_sample(self.Nr)*self.scale)*0.9
         pairs=np.transpose(np.array([x,y]))
         return pairs
     def get_radii(self,dev=0.1):
         array=np.random.normal(loc=self.radius,scale=dev*self.radius,size=self.Nr)
         return(array)
-    def get_thicknesses(self,dev=0.1):
-        array=np.random.normal(loc=self.thickness,scale=dev*self.thickness,size=self.Nr)
+    def get_thicknesses(self,sd=0.5):
+        #array=np.random.normal(loc=self.thickness,scale=dev*self.thickness,size=self.Nr)
+        array = np.zeros(self.Nr)
+        for i,k in enumerate(array):
+            array[i]=get_truncated_normal(mean=self.thickness, sd=0.5, low=0.8*self.thickness, upp=1.5*self.thickness)
         return(array)
     def get_cut_angle(self):
         array=(1-0.3)*np.random.random_sample(self.Nr)+0.3
@@ -260,16 +263,23 @@ class label_generator(defect):
     def get_box(self):
         self.box=[0,scale,0,scale]
         return self.box
-    def get_depth(self,dev=0.01,color_map_string='afmhot'):
+    def get_depth(self,dev=0.05,color_map_string='afmhot'):
         # cmap = cm.get_cmap(color_map_string)
         colors = np.random.normal(loc=self.defect_color,scale=dev*self.defect_color,size=self.Nr)
         # rgbs = np.transpose(np.delete(np.transpose(rgbs),3,0))
         return colors
     def get_sigma_lumpyness(self,dev=0.1):
-        sigma = get_truncated_normal(mean=1, sd=0.5, low=0.01, upp=10)
-        lumpyness = get_truncated_normal(mean=-1, sd=0.2, low=-1, upp=1)
-        array_s=np.random.normal(loc=sigma,scale=dev*sigma,size=self.Nr)
-        array_l=np.random.normal(loc=lumpyness,scale=abs(dev*lumpyness),size=self.Nr)
+        #sigma = get_truncated_normal(mean=1, sd=0.5, low=0.01, upp=10)
+        #lumpyness = get_truncated_normal(mean=-1, sd=0.2, low=-1, upp=1)
+        #array_s=np.random.normal(loc=sigma,scale=dev*sigma,size=self.Nr)
+        array_s = np.zeros(self.Nr)
+        array_l = np.zeros(self.Nr)
+        for i,k in enumerate(array_s):
+            array_s[i]=get_truncated_normal(mean=1, sd=0.5, low=0.01, upp=10)
+            array_l[i]=get_truncated_normal(mean=-1, sd=0.2, low=-1, upp=1)
+
+        #array_s=np.random.normal(loc=sigma,scale=dev*sigma,size=self.Nr)
+        #array_l=np.random.normal(loc=lumpyness,scale=abs(dev*lumpyness),size=self.Nr)
         return array_s,array_l
 
     def generate_immage_with_boxes(self,axs,noisy_backraund=True):
@@ -288,8 +298,9 @@ class label_generator(defect):
             thickness=self.thicknesses[i]
             color=self.colors[i]
             center=self.centers[i]
-            d = defect(r=self.radii[i],center=self.centers[i],thickness=self.thickness,color=self.colors[i])
-            d.add_bump(sigma=self.sigma[i],lumpyness=self.lumpyness[i])
+            #d = defect(r=self.radii[i],center=self.centers[i],thickness=self.thickness,color=self.colors[i])
+            d = defect(r=r,center=self.centers[i],thickness=thickness,color=self.colors[i])
+            d.add_bump()#sigma=self.sigma[i],lumpyness=self.lumpyness[i])
             d.cut(self.cut_angles[i])
             print("cut_angle:",self.cut_angles[i])
             d.rotate(angle=np.random.random()*np.pi*2)
@@ -392,7 +403,7 @@ rgb=cmap(x)
 for i in range(num_images):
     image_name = file_base+"_"+str(i)
 
-    r=label_generator(Nr=num_defects)
+    r=label_generator(Nr=num_defects,thickness=20)
     fig ,axs = plt.subplots(1,1,figsize=(10,10))
     axs.set_xlim((0,2))
     axs.set_ylim((0,2))
