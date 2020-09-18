@@ -383,7 +383,8 @@ class label_generator(defect):
         root.append(m5)
 
         for i in range(self.Nr):
-            append_object(root,label=str(self.fraction[i]),xmin=str(np.int(self.box[i][0])),ymin=str(np.int(self.box[i][1])),xmax=str(np.int(self.box[i][2])),ymax=str(np.int(self.box[i][3])))
+            #append_object(root,label=str(self.fraction[i]),xmin=str(np.int(self.box[i][0])),ymin=str(np.int(self.box[i][1])),xmax=str(np.int(self.box[i][2])),ymax=str(np.int(self.box[i][3])))
+            append_object(root,label=str(self.fraction[i]),xmin=str(np.int(self.box[i][0])),ymin=str(np.int(self.box[i][3])),xmax=str(np.int(self.box[i][2])),ymax=str(np.int(self.box[i][1])))
             print(np.int(self.box[i][0]))
 
         tree = gfg.ElementTree(root) 
