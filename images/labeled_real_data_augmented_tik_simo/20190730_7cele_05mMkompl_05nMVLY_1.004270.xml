@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>72.0</xmin>
-			<ymin>21.0</ymin>
-			<xmax>84.0</xmax>
-			<ymax>11.0</ymax>
+			<xmin>72</xmin>
+			<ymin>21</ymin>
+			<xmax>84</xmax>
+			<ymax>11</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -29,10 +29,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>29.0</xmin>
-			<ymin>147.0</ymin>
-			<xmax>38.0</xmax>
-			<ymax>137.0</ymax>
+			<xmin>29</xmin>
+			<ymin>147</ymin>
+			<xmax>38</xmax>
+			<ymax>137</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -41,10 +41,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>170.0</xmin>
-			<ymin>118.0</ymin>
-			<xmax>183.0</xmax>
-			<ymax>106.0</ymax>
+			<xmin>170</xmin>
+			<ymin>118</ymin>
+			<xmax>183</xmax>
+			<ymax>106</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -53,10 +53,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>234.0</xmin>
-			<ymin>161.0</ymin>
-			<xmax>246.0</xmax>
-			<ymax>150.0</ymax>
+			<xmin>234</xmin>
+			<ymin>161</ymin>
+			<xmax>246</xmax>
+			<ymax>150</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -65,10 +65,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>127.0</xmin>
-			<ymin>244.0</ymin>
-			<xmax>148.0</xmax>
-			<ymax>226.0</ymax>
+			<xmin>127</xmin>
+			<ymin>244</ymin>
+			<xmax>148</xmax>
+			<ymax>226</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -77,10 +77,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>192.0</xmin>
-			<ymin>490.0</ymin>
-			<xmax>204.0</xmax>
-			<ymax>472.0</ymax>
+			<xmin>192</xmin>
+			<ymin>490</ymin>
+			<xmax>204</xmax>
+			<ymax>472</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -89,10 +89,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>239.0</xmin>
-			<ymin>487.0</ymin>
-			<xmax>254.0</xmax>
-			<ymax>471.0</ymax>
+			<xmin>239</xmin>
+			<ymin>487</ymin>
+			<xmax>254</xmax>
+			<ymax>471</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -101,10 +101,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>277.0</xmin>
-			<ymin>201.0</ymin>
-			<xmax>292.0</xmax>
-			<ymax>189.0</ymax>
+			<xmin>277</xmin>
+			<ymin>201</ymin>
+			<xmax>292</xmax>
+			<ymax>189</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -113,10 +113,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>293.0</xmin>
-			<ymin>457.0</ymin>
-			<xmax>302.0</xmax>
-			<ymax>444.0</ymax>
+			<xmin>293</xmin>
+			<ymin>457</ymin>
+			<xmax>302</xmax>
+			<ymax>444</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -125,10 +125,10 @@
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>312.0</xmin>
-			<ymin>511.0</ymin>
-			<xmax>327.0</xmax>
-			<ymax>503.0</ymax>
+			<xmin>312</xmin>
+			<ymin>511</ymin>
+			<xmax>327</xmax>
+			<ymax>503</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -137,10 +137,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>355.0</xmin>
-			<ymin>147.0</ymin>
-			<xmax>374.0</xmax>
-			<ymax>133.0</ymax>
+			<xmin>355</xmin>
+			<ymin>147</ymin>
+			<xmax>374</xmax>
+			<ymax>133</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -149,10 +149,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>373.0</xmin>
-			<ymin>52.0</ymin>
-			<xmax>383.0</xmax>
-			<ymax>43.0</ymax>
+			<xmin>373</xmin>
+			<ymin>52</ymin>
+			<xmax>383</xmax>
+			<ymax>43</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -161,10 +161,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>421.0</xmin>
-			<ymin>132.0</ymin>
-			<xmax>435.0</xmax>
-			<ymax>117.0</ymax>
+			<xmin>421</xmin>
+			<ymin>132</ymin>
+			<xmax>435</xmax>
+			<ymax>117</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -173,10 +173,10 @@
 		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>493.0</xmin>
-			<ymin>51.0</ymin>
-			<xmax>511.0</xmax>
-			<ymax>36.0</ymax>
+			<xmin>493</xmin>
+			<ymin>51</ymin>
+			<xmax>511</xmax>
+			<ymax>36</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -185,10 +185,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>438.0</xmin>
-			<ymin>348.0</ymin>
-			<xmax>451.0</xmax>
-			<ymax>336.0</ymax>
+			<xmin>438</xmin>
+			<ymin>348</ymin>
+			<xmax>451</xmax>
+			<ymax>336</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -197,10 +197,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>450.0</xmin>
-			<ymin>355.0</ymin>
-			<xmax>461.0</xmax>
-			<ymax>340.0</ymax>
+			<xmin>450</xmin>
+			<ymin>355</ymin>
+			<xmax>461</xmax>
+			<ymax>340</ymax>
 		</bndbox>
 	</object>
 </annotation>

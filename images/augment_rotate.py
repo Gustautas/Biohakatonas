@@ -45,16 +45,19 @@ for image in images_list:
         R = np.array(((c, -s), (s, c)))
         rot = np.dot(R,xy)
 
-        xmin.text = str(int(rot[0]) + width / 2)
-        ymin.text = str(int(rot[1]) + height / 2)
+        xmin.text = str(int(int(rot[0]) + width / 2))
+        ymin.text = str(int(int(rot[1]) + height / 2))
 
         xy = np.array([int(xmax_text_old) - width / 2, int(ymax_text_old) - height / 2])
         c, s = np.cos(rotation_degrees_rad), np.sin(rotation_degrees_rad)
         R = np.array(((c, -s), (s, c)))
         rot = np.dot(R, xy)
 
-        xmax.text = str(int(rot[0]) + width / 2)
-        ymax.text = str(int(rot[1]) + height / 2)
+        xmax.text = str(int(int(rot[0]) + width / 2))
+        ymax.text = str(int(int(rot[1]) + height / 2))
+
+
+        print(xmin.text)
 
 
     label_org_xml.write("labeled_real_data_augmented_tik_simo/" + filename + str(rotation_degrees) + ".xml")
