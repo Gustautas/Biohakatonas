@@ -315,7 +315,8 @@ class label_generator(defect):
             xmax=np.max(np.array([d.x1,d.x2]))
             ymin=np.min(np.array([d.y1,d.y2]))
             ymax=np.max(np.array([d.y1,d.y2]))
-            self.box[i]=np.array([np.int(xmin/self.scale*512),512-np.int(ymin/self.scale*512),np.int(xmax/self.scale*512),512-np.int(ymax/self.scale*512)],dtype=int)
+            padding = 4
+            self.box[i]=np.array([np.int(xmin/self.scale*512-padding),512-np.int(ymin/self.scale*512-padding),np.int(xmax/self.scale*512+padding),512-np.int(ymax/self.scale*512+padding)],dtype=int)
             #print(np.round(self.box[i]))
             #self.box[i]=np.array([xmin,ymin,xmax,ymax])
             #plt.plot([xmin,xmin,xmax,xmax,xmin],[ymin,ymax,ymax,ymin,ymin],color='black')
