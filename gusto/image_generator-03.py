@@ -84,6 +84,7 @@ def append_object(root,label="NAME",pose="Unspecified",truncated="0",dificult="0
     root.append(m4)
     c1 = gfg.SubElement(m4, "name") 
     c1.text = label
+    print(label)
     c2 = gfg.SubElement(m4, "pose") 
     c2.text = pose
     c3 = gfg.SubElement(m4, "truncated") 
@@ -290,6 +291,7 @@ class label_generator(defect):
             d = defect(r=self.radii[i],center=self.centers[i],thickness=self.thickness,color=self.colors[i])
             d.add_bump(sigma=self.sigma[i],lumpyness=self.lumpyness[i])
             d.cut(self.cut_angles[i])
+            print("cut_angle:",self.cut_angles[i])
             d.rotate(angle=np.random.random()*np.pi*2)
             d.fill(axs)
             # plt.axis('off')
@@ -310,7 +312,8 @@ class label_generator(defect):
     def get_labels(self):
         radii=self.get_radii()
         thicknesses=self.get_thicknesses()
-        cut_angles=self.get_cut_angle()
+        #cut_angles=self.get_cut_angle()
+        cut_angles=self.cut_angles
         cut_angles_4=np.abs(cut_angles-1/4)
         cut_angles_3=np.abs(cut_angles-0.5)
         cut_angles_2=np.abs(cut_angles-3/4)
@@ -327,6 +330,8 @@ class label_generator(defect):
         cut_angle_labels[three_forths]=0.75
         cut_angle_labels[full]=1
         self.fraction=cut_angle_labels
+        print(self.fraction)
+        print(cut_angles_global_t)
         dict = {'radii': radii, 'thicknesses': thicknesses, 'fraction': cut_angle_labels,'box' : self.box}
         
         return dict
@@ -378,7 +383,7 @@ class label_generator(defect):
 
         dom = xml.dom.minidom.parse(path+"/"+fileName) # or xml.dom.minidom.parseString(xml_string)
         pretty_xml_as_string = dom.toprettyxml()
-        #print(pretty_xml_as_string)
+        print(pretty_xml_as_string)
 
 cmap = cm.get_cmap('afmhot')
 x=np.linspace(0.2,1,10)
