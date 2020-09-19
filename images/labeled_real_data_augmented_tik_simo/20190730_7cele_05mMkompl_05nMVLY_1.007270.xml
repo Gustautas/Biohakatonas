@@ -1,7 +1,7 @@
 <annotation>
 	<folder>images</folder>
-	<filename>20190730_7cele_05mMkompl_05nMVLY_1.007.jpg</filename>
-	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\20190730_7cele_05mMkompl_05nMVLY_1.007.jpg</path>
+	<filename>20190730_7cele_05mMkompl_05nMVLY_1.007270.jpg</filename>
+	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\20190730_7cele_05mMkompl_05nMVLY_1.007270.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>217</xmin>
-			<ymin>192</ymin>
+			<ymin>176</ymin>
 			<xmax>233</xmax>
-			<ymax>176</ymax>
+			<ymax>192</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -30,9 +30,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>256</xmin>
-			<ymin>232</ymin>
+			<ymin>211</ymin>
 			<xmax>275</xmax>
-			<ymax>211</ymax>
+			<ymax>232</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -42,9 +42,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>262</xmin>
-			<ymin>285</ymin>
+			<ymin>260</ymin>
 			<xmax>276</xmax>
-			<ymax>260</ymax>
+			<ymax>285</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -54,9 +54,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>321</xmin>
-			<ymin>387</ymin>
+			<ymin>373</ymin>
 			<xmax>341</xmax>
-			<ymax>373</ymax>
+			<ymax>387</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -66,9 +66,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>163</xmin>
-			<ymin>448</ymin>
+			<ymin>430</ymin>
 			<xmax>179</xmax>
-			<ymax>430</ymax>
+			<ymax>448</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -78,9 +78,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>483</xmin>
-			<ymin>503</ymin>
+			<ymin>482</ymin>
 			<xmax>511</xmax>
-			<ymax>482</ymax>
+			<ymax>503</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -90,9 +90,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>419</xmin>
-			<ymin>96</ymin>
+			<ymin>80</ymin>
 			<xmax>436</xmax>
-			<ymax>80</ymax>
+			<ymax>96</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -102,9 +102,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>439</xmin>
-			<ymin>24</ymin>
+			<ymin>12</ymin>
 			<xmax>454</xmax>
-			<ymax>12</ymax>
+			<ymax>24</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -114,9 +114,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>388</xmin>
-			<ymin>510</ymin>
+			<ymin>500</ymin>
 			<xmax>411</xmax>
-			<ymax>500</ymax>
+			<ymax>510</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -126,9 +126,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>124</xmin>
-			<ymin>199</ymin>
+			<ymin>178</ymin>
 			<xmax>142</xmax>
-			<ymax>178</ymax>
+			<ymax>199</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -138,9 +138,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>73</xmin>
-			<ymin>249</ymin>
+			<ymin>232</ymin>
 			<xmax>94</xmax>
-			<ymax>232</ymax>
+			<ymax>249</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -150,9 +150,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>108</xmin>
-			<ymin>382</ymin>
+			<ymin>371</ymin>
 			<xmax>116</xmax>
-			<ymax>371</ymax>
+			<ymax>382</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -162,9 +162,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>86</xmin>
-			<ymin>47</ymin>
+			<ymin>33</ymin>
 			<xmax>97</xmax>
-			<ymax>33</ymax>
+			<ymax>47</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -174,9 +174,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1</xmin>
-			<ymin>118</ymin>
+			<ymin>97</ymin>
 			<xmax>7</xmax>
-			<ymax>97</ymax>
+			<ymax>118</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -186,9 +186,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>457</xmin>
-			<ymin>109</ymin>
+			<ymin>94</ymin>
 			<xmax>468</xmax>
-			<ymax>94</ymax>
+			<ymax>109</ymax>
 		</bndbox>
 	</object>
 	<object>
@@ -198,9 +198,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>312</xmin>
-			<ymin>421</ymin>
+			<ymin>403</ymin>
 			<xmax>331</xmax>
-			<ymax>403</ymax>
+			<ymax>421</ymax>
 		</bndbox>
 	</object>
 </annotation>

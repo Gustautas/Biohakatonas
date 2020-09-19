@@ -1,7 +1,7 @@
 <annotation>
 	<folder>images</folder>
-	<filename>clusters1.jpg</filename>
-	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\clusters1.jpg</path>
+	<filename>clusters1flipped.jpg</filename>
+	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\clusters1flipped.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>

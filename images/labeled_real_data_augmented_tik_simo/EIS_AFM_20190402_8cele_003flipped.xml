@@ -1,7 +1,7 @@
 <annotation>
 	<folder>images</folder>
-	<filename>EIS_AFM_20190402_8cele_003.jpg</filename>
-	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\EIS_AFM_20190402_8cele_003.jpg</path>
+	<filename>EIS_AFM_20190402_8cele_003flipped.jpg</filename>
+	<path>C:\Users\sijas\.tensorflow\workspace\training_demo\images\EIS_AFM_20190402_8cele_003flipped.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>

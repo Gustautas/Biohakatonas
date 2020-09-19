@@ -21,6 +21,9 @@ for image in images_list:
 
     annotation = label_org_xml.getroot()
 
+    annotation.find("filename").text = annotation.find("filename").text[:-4] + "flipped.jpg"
+    annotation.find("path").text = annotation.find("path").text[:-4] + "flipped.jpg"
+
     for child in annotation.findall("object"):
         bndbox = child.find("bndbox")
 
