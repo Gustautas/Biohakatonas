@@ -283,6 +283,42 @@ class label_generator(defect):
         #array_l=np.random.normal(loc=lumpyness,scale=abs(dev*lumpyness),size=self.Nr)
         return array_s,array_l
 
+    def add_shit(self,axs,number_of_shits=1,size_defoult=0.08,defect_color=0.95):
+        print('number_of_shits:',number_of_shits)
+        self.box_shit=np.zeros((number_of_shits,4))
+        if number_of_shits==0:
+            return 'nothing'
+        else:
+            n=15
+            for i in range(number_of_shits):
+                size=np.random.random()*size_defoult
+                xs=[]
+                ys=[]
+                coordinate_x=(0.04*self.scale+np.random.random()*self.scale)*0.9
+                coordinate_y=(0.04*self.scale+np.random.random()*self.scale)*0.9
+                x=np.random.random(n)*size+size+coordinate_x
+                y=np.random.random(n)*size+size+coordinate_y
+                r=np.random.random(n)*size
+                theta=np.linspace(0,np.pi*2,n)
+                x2=r*np.sin(theta)+size+coordinate_x
+                y2=r*np.cos(theta)+size+coordinate_y
+                cmap = cm.get_cmap('afmhot')
+                rgb=cmap(defect_color)
+                axs.scatter(x,y,s=350/0.08*size,color=rgb,zorder=10)
+                axs.scatter(x2,y2,s=350/0.08*size,color=rgb,zorder=10)
+                xs.append(x)
+                ys.append(y)
+                xs.append(x2)
+                ys.append(y2)
+                xmin=np.min(xs)
+                xmax=np.max(xs)
+                ymin=np.min(ys)
+                ymax=np.max(ys)
+                padding=0
+                self.box_shit[i]=np.array([np.int(xmin/self.scale*512-padding),512-np.int(ymin/self.scale*512-padding),np.int(xmax/self.scale*512+padding),512-np.int(ymax/self.scale*512+padding)],dtype=int)
+
+                # axs.plot((np.min(xs)/1.03,np.max(xs)*1.03),(np.min(ys)/1.03,np.max(ys)*1.03),zorder=11)
+
     def generate_immage_with_boxes(self,axs,noisy_backraund=True):
         if noisy_backraund==True:
             time=0.1+np.random.random()*2
@@ -296,6 +332,9 @@ class label_generator(defect):
         self.colors=self.get_depth()
         self.centers=self.get_coordinates()
         self.box=np.zeros((self.Nr,4))
+        self.Nr_shit=10#np.random.randint(low=0,high=3)
+        self.add_shit(axs,number_of_shits=self.Nr_shit)
+
         for i in range(self.Nr):
             r=self.radii[i]
             thickness=self.thicknesses[i]
@@ -308,6 +347,7 @@ class label_generator(defect):
             # print("cut_angle:",self.cut_angles[i])
             d.rotate(angle=np.random.random()*np.pi*2)
             d.fill(axs)
+
             # plt.axis('off')
             axs.spines['left'].set_visible(False)
             axs.spines['right'].set_visible(False)
@@ -323,6 +363,7 @@ class label_generator(defect):
             #print(np.round(self.box[i]))
             #self.box[i]=np.array([xmin,ymin,xmax,ymax])
             #plt.plot([xmin,xmin,xmax,xmax,xmin],[ymin,ymax,ymax,ymin,ymin],color='black')
+
 
     def get_labels(self):
         radii=self.get_radii()
@@ -389,7 +430,8 @@ class label_generator(defect):
             #append_object(root,label=str(self.fraction[i]),xmin=str(np.int(self.box[i][0])),ymin=str(np.int(self.box[i][1])),xmax=str(np.int(self.box[i][2])),ymax=str(np.int(self.box[i][3])))
             append_object(root,label=str(self.fraction[i]),xmin=str(np.int(self.box[i][0])),ymin=str(np.int(self.box[i][3])),xmax=str(np.int(self.box[i][2])),ymax=str(np.int(self.box[i][1])))
             # print(np.int(self.box[i][0]))
-
+        for i in range(self.Nr_shit):
+            append_object(root,label=str(-1),xmin=str(np.int(self.box_shit[i][0])),ymin=str(np.int(self.box_shit[i][3])),xmax=str(np.int(self.box_shit[i][2])),ymax=str(np.int(self.box_shit[i][1])))
         tree = gfg.ElementTree(root) 
 
         with open (path+"/"+fileName, "wb") as files : 
@@ -404,6 +446,8 @@ class label_generator(defect):
 cmap = cm.get_cmap('afmhot')
 x=np.linspace(0.2,1,10)
 rgb=cmap(x)
+#np.random.randint(low=0,high=3)
+
 
 for i in range(num_images):
     image_name = file_base+"_"+str(i)
@@ -413,7 +457,10 @@ for i in range(num_images):
     axs.set_xlim((0,2))
     axs.set_ylim((0,2))
     r.generate_immage_with_boxes(axs,noisy_backraund=noisy_backraund)
+    # add_shit(axs,number_of_shits=np.random.randint(low=0,high=3))
+    # add_shit(axs,number_of_shits=np.random.randint(low=0,high=6),size=0.01)
     r.get_labels()
+
     axs.set_facecolor(rgb[0])
     #plt.show()
     # print(image_name)
