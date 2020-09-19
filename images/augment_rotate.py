@@ -5,7 +5,7 @@ import math
 import numpy as np
 import os
 
-rotation_degrees = 270
+rotation_degrees = 90
 rotation_degrees_rad = rotation_degrees / 180 * math.pi
 height = 512
 width = 512
@@ -45,16 +45,31 @@ for image in images_list:
         R = np.array(((c, -s), (s, c)))
         rot = np.dot(R,xy)
 
-        xmin.text = str(int(int(rot[0]) + width / 2))
-        ymin.text = str(int(int(rot[1]) + height / 2))
+        if(rotation_degrees == 90):
+            xmax.text = str(int(int(rot[0]) + width / 2))
+            ymin.text = str(int(int(rot[1]) + height / 2))
+        elif(rotation_degrees == 180):
+            xmax.text = str(int(int(rot[0]) + width / 2))
+            ymax.text = str(int(int(rot[1]) + height / 2))
+        elif(rotation_degrees == 270):
+            xmin.text = str(int(int(rot[0]) + width / 2))
+            ymax.text = str(int(int(rot[1]) + height / 2))
+
 
         xy = np.array([int(xmax_text_old) - width / 2, int(ymax_text_old) - height / 2])
         c, s = np.cos(rotation_degrees_rad), np.sin(rotation_degrees_rad)
         R = np.array(((c, -s), (s, c)))
         rot = np.dot(R, xy)
 
-        xmax.text = str(int(int(rot[0]) + width / 2))
-        ymax.text = str(int(int(rot[1]) + height / 2))
+        if(rotation_degrees == 90):
+            xmin.text = str(int(int(rot[0]) + width / 2))
+            ymax.text = str(int(int(rot[1]) + height / 2))
+        elif(rotation_degrees == 180):
+            xmin.text = str(int(int(rot[0]) + width / 2))
+            ymin.text =  str(int(int(rot[1]) + height / 2))
+        elif(rotation_degrees == 270):
+            xmax.text = str(int(int(rot[0]) + width / 2))
+            ymin.text = str(int(int(rot[1]) + height / 2))
 
 
         print(xmin.text)
