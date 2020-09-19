@@ -5,7 +5,7 @@ import math
 import numpy as np
 import os
 
-rotation_degrees = 90
+rotation_degrees = 270
 rotation_degrees_rad = rotation_degrees / 180 * math.pi
 height = 512
 width = 512
@@ -23,6 +23,9 @@ for image in images_list:
     label_org_xml = ET.parse("labeled_real_data_non_augmented_tik_simo/" + filename_with_extension)
 
     annotation = label_org_xml.getroot()
+
+    annotation.find("filename").text = annotation.find("filename").text[:-4] + str(rotation_degrees) + ".jpg"
+    annotation.find("path").text = annotation.find("path").text[:-4] + str(rotation_degrees) + ".jpg"
 
     for child in annotation.findall("object"):
         bndbox = child.find("bndbox")
