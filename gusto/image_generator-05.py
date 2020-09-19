@@ -421,7 +421,7 @@ for i in range(num_images):
     plt.close()
     img = cv2.imread(image_path+"/"+image_name+".jpg")
     blur = cv2.blur(img,(3+np.random.randint(low=0,high=2),3+np.random.randint(low=0,high=2)))
-    cv2.imwrite(image_path+"/"+image_name+'blure'+".jpg",blur)
+    cv2.imwrite(image_path+"/"+image_name+".jpg",blur)
     a=r.get_labels2(path=image_path,image_name=image_name)
 #print(a)
 
