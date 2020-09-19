@@ -19,14 +19,14 @@ for image in images_list:
     for child in annotation.findall("object"):
         name = child.find("name")
 
-        if(name.text) == "1/4":
+        if(name.text) == "1":
             print("CHANGING")
-            name.text = "0.25"
-        elif(name.text) == "2/4":
-            name.text = "0.5"
-        elif(name.text) == "3/4":
-            name.text = "0.75"
-        elif(name.text) == "4/4":
-            name.text = "1"
+            name.text = "1.0"
+        # elif(name.text) == "2/4":
+        #     name.text = "0.5"
+        # elif(name.text) == "3/4":
+        #     name.text = "0.75"
+        # elif(name.text) == "4/4":
+        #     name.text = "1"
 
     label_org_xml.write(filename)
