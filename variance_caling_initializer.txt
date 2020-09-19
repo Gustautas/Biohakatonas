@@ -1,0 +1,10 @@
+initializer {
+
+    variance_scaling_initializer {
+
+            factor: 1
+
+            uniform: 1
+            mode: 0
+	    }
+     }
