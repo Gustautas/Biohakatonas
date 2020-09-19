@@ -314,7 +314,7 @@ class label_generator(defect):
                 xmax=np.max(xs)
                 ymin=np.min(ys)
                 ymax=np.max(ys)
-                padding=0
+                padding=8
                 self.box_shit[i]=np.array([np.int(xmin/self.scale*512-padding),512-np.int(ymin/self.scale*512-padding),np.int(xmax/self.scale*512+padding),512-np.int(ymax/self.scale*512+padding)],dtype=int)
 
                 # axs.plot((np.min(xs)/1.03,np.max(xs)*1.03),(np.min(ys)/1.03,np.max(ys)*1.03),zorder=11)
