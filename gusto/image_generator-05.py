@@ -332,7 +332,7 @@ class label_generator(defect):
         self.colors=self.get_depth()
         self.centers=self.get_coordinates()
         self.box=np.zeros((self.Nr,4))
-        self.Nr_shit=10#np.random.randint(low=0,high=3)
+        self.Nr_shit=np.random.randint(low=0,high=5)
         self.add_shit(axs,number_of_shits=self.Nr_shit)
 
         for i in range(self.Nr):
