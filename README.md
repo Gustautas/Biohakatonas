@@ -1,19 +1,5 @@
-# pipeline
-0. Issirinkt algoritma
-0.1. Nusprest architektura. Vistiek reikes kazka pakeist.
-0.2. Reikia Demo.
-0.3.: 3.8.5 pythonas, Tensorflow 2.2.0
-0.4. workstation training enviroment su GPU. Maybe.
 
-
-1. Synthesysing data (su labeliais).
-2. Background. Filio darbas issiasikint kokio reikia ir padaryt.
-3. Build the network.
-4. Testing
-5. Pristatymas
-
-
-PRETRAINED NETWORKS
+based on
 https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md
 
 STARTING from: https://stackoverflow.com/questions/55178906/how-to-initialize-weight-for-convolution-layers-in-tensorflow-object-detection-a
